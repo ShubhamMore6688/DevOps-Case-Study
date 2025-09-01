@@ -4,12 +4,7 @@ provider "aws" {
     region = var.region
 }
 
-# Key-Pair Login
 
-resource "aws_key_pair" "my_key"{
-    key_name = "devops-server-key"
-  
-}
 
 # Default VPC
 
@@ -59,7 +54,7 @@ resource "aws_security_group" "my_sec_grp"{
 # EC2 Instance
 
 resource "aws_instance" "my_instance"{
-    key_name = aws_key_pair.my_key.key_name 
+    key_name = "devops-server" 
     vpc_security_group_ids = [aws_security_group.my_sec_grp.id]
     instance_type = var.ec2_instance_type
     ami = var.ec2_instance_image
