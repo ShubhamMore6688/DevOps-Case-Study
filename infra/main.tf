@@ -8,7 +8,7 @@ provider "aws" {
 
 resource "aws_key_pair" "my_key"{
     key_name = "devops-server-key"
-    public_key = file("devops-server-key.pub")
+  
 }
 
 # Default VPC
