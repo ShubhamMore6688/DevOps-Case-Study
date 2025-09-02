@@ -25,11 +25,7 @@ pipeline {
             }
         }
 
-        stage('Copy SSH Key') {
-            steps {
-                sh 'cp /var/lib/jenkins/.ssh/devops-server-key.pub infra/'
-            }
-        }
+       
 
         stage('Terraform Apply - Provision Infra') {
             steps {
