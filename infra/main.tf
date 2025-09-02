@@ -15,7 +15,7 @@ resource "aws_default_vpc" "default"{
 # Default Subnet
 
 resource "aws_default_subnet" "default_az1" {
-    availability_zone = "us-east-2a"
+    availability_zone = "us-east-1a"
 }
 
 # Security Group
@@ -54,7 +54,7 @@ resource "aws_security_group" "my_sec_grp"{
 # EC2 Instance
 
 resource "aws_instance" "my_instance"{
-    key_name = "devops-server" 
+    key_name = "devops-server-key" 
     vpc_security_group_ids = [aws_security_group.my_sec_grp.id]
     instance_type = var.ec2_instance_type
     ami = var.ec2_instance_image
