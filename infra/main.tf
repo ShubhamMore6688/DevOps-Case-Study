@@ -15,7 +15,7 @@ resource "aws_default_vpc" "default"{
 # Default Subnet
 
 resource "aws_default_subnet" "default_az1" {
-    availability_zone = "ap-south-1a"
+    availability_zone = "us-east-2a"
 }
 
 # Security Group
